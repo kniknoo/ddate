@@ -4,11 +4,11 @@ Find out the current day of the Discordian Calendar
 
 ## Installation
 
-crystal build src/discocal.cr
+crystal build src/discal.cr
 
 ## Usage
 
-./discocal [Options] <YYYY MM DD>
+./discal [Options] <YYYY MM DD>
 
 ## Development
 
