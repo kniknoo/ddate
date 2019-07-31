@@ -1,4 +1,5 @@
 require "option_parser"
+require "colorize"
 require "./ddate"
 
 date = Time.local
