@@ -1,5 +1,9 @@
 name: ddate
-version: 0.1.0
+version: 0.1.1
+
+description: |
+  The Discordian Calendar with a color option
+
 
 authors:
   - Nicholas Rake <penguin@hierobots.tech>
@@ -8,6 +12,6 @@ targets:
   ddate:
     main: src/ddate.cr
 
-crystal: 0.29.0
+crystal: 0.35.1
 
 license: MIT
