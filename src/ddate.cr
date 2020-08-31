@@ -55,7 +55,7 @@ module Ddate
 
     # Returns the Month
     def month
-      MONTHS[@day_of_year / 73]
+      MONTHS[@day_of_year // 73]
     end
 
     # Returns the day of the Month

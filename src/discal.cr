@@ -5,14 +5,14 @@ require "./ddate"
 date = Time.local
 color = false
 
-OptionParser.parse! do |parser|
+OptionParser.parse do |parser|
   parser.banner = "Usage: discal [arguments] <date: YYYY MM DD>"
   parser.on("-c", "--color", "Prints important values in color") { color = true }
   parser.on("-h", "--help", "Show this help") do
     puts parser
     exit
   end
-  parser.unknown_args { |day| date = Time.new(day[0].to_i, day[1].to_i, day[2].to_i) if day.any? && day.size == 3 }
+  parser.unknown_args { |day| date = Time.local(day[0].to_i, day[1].to_i, day[2].to_i) if day.any? && day.size == 3 }
   parser.invalid_option do |flag|
     STDERR.puts "ERROR: #{flag} is not a valid option."
     STDERR.puts parser
@@ -22,7 +22,7 @@ end
 
 # Prints a message about the day provided. If it is St Tib's Day, Prints
 # a special message regarding the non-existance of the day. If the day is
-# a Holiday, a celebratory message is added. 
+# a Holiday, a celebratory message is added.
 def fnord(day, color)
   if day.tibs_day?
     puts "Today is St Tib's Day. It doesn't actually exist."
